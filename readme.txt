@@ -1,64 +1,64 @@
----------------------------------------------------------
-　IEEE1888 C言語版 プロトコルスタック・ソフトウェア
-  　　　　                                 作者: 落合秀也
-          　　　　                    バージョン: v201310
----------------------------------------------------------
+-------------------------------------------------- -------
+IEEE1888 C language version of the protocol stack software
+ﾂﾂAuthor: Ochiai Hideya
+ﾂﾂﾂﾂﾂﾂﾂﾂﾂﾂVersion: v201310
+-------------------------------------------------- -------
 
-１．はじめに
-　このパッケージには、C言語版IEEE1888プロトコルスタックが
-　ソースコードで含まれています。
+1. first
+This package, the C language version IEEE1888 protocol stack
+It is included in the source code.
 
-　ファイル構成は以下の通りです。
-　- ieee1888.h 　　　　　　　　メインのヘッダ・ファイル
-　- ieee1888_client.c　　　　　IEEE1888のquery/dataメソッドのクライアント通信スタブ
-　- ieee1888_object_factory.c　IEEE1888オブジェクト(transportやbody等)の生成工場
-　- ieee1888_sample_gw.c 　　　GWのサンプル実装
-　- ieee1888_sample_app.c　　　APPのサンプル実装
-　- ieee1888_server.c　　　　　IEEE1888のquery/dataメソッドのサーバ通信スタブ
-　- ieee1888_util.c　　　　　　便利な機能(オブジェクトのダンプ表示等)の集合
-　- ieee1888_XMLgenerator.h　　XMLシリアル化のためのヘッダ・ファイル
-　- ieee1888_XMLgenerator.c　　IEEE1888オブジェクトのXMLシリアル化機能(生成器)実装
-　- ieee1888_XMLparser.h 　　　XMLデシリアル化のためのヘッダ・ファイル
-　- ieee1888_XMLparser.c 　　　IEEE1888オブジェクトのXMLデシリアル化機能(解析機)実装
-　- ieee1888_datapool.h 　　　 再送信待ちデータの保管機能実装のヘッダ・ファイル
-　- ieee1888_datapool.c 　　　 再送信待ちデータの保管機能実装
-　- Makefile 　　　　　　　　　makeビルド実行設定ファイル
-　- readme.txt 　　　　　　　　このファイル
+File configuration is as follows.
+- Ieee1888.h main header file
+- Client communication stub of query / data method of ieee1888_client.c IEEE1888
+- Ieee1888_object_factory.c IEEE1888 generation plant of the object (transport and body, etc.)
+- Sample implementation of ieee1888_sample_gw.c GW
+- Sample implementation of ieee1888_sample_app.c APP
+- Server communication stub of query / data method of ieee1888_server.c IEEE1888
+- A collection of ieee1888_util.c useful functions (dump display of objects, etc.)
+- Ieee1888_XMLgenerator.h header files for XML serialization
+- Ieee1888_XMLgenerator.c IEEE1888 XML serialization of the object (generator) implementation
+- Ieee1888_XMLparser.h header files for XML deserialized
+- Ieee1888_XMLparser.c IEEE1888 XML deserialization function of the object (analyzer) implementation
+- Ieee1888_datapool.h header file storage function implementation of the re-transmission waiting data
+- Ieee1888_datapool.c storage function implementation of the re-transmission waiting data
+- Makefile make build running configuration file
+- Readme.txt this file
 
-２．ビルド方法
-　Linux環境にて、
-　$ make
-　を実行します。
+2. How to Build
+In the Linux environment,
+$ Make
+It runs the.
 
-　以上で、
-　　ieee1888_sample_app および ieee1888_sample_gw 
-　の実行ファイルが生成されます。
-　これでビルドは完了です。
+Above,
+ieee1888_sample_app and ieee1888_sample_gw
+Of the executable file is generated.
+This build is complete.
 
-３．改良の方法
-　ieee1888_sample_gw.c は、FETCH, WRITEサーバのサンプルとなっています。
-　ieee1888_sample_app.c は、FETCH, WRITEクライアントのサンプルとなっています。
-　これらをひな型にし、新たなアプリケーション(GW, APP等)を実装することができます。
+3. Improvement of methods
+ieee1888_sample_gw.c has become FETCH, and WRITE server of the sample.
+ieee1888_sample_app.c has become FETCH, a sample of WRITE client.
+These were in the template, you will be able to implement a new application (GW, APP, etc.).
 
-　それ以外のファイルは、ライブラリとして使用するので、編集する必要はありません。
-　詳細は、「IEEE1888プロトコル教科書 (インプレスジャパン社)」を参照してください。
+Other files, because it uses as a library, you do not need to be edited.
+For more information, please refer to the "IEEE1888 protocol textbook (Impress Japan)".
 
 
-４．免責事項
-　本ソフトウェアを使用して生じた事象については、
-　作者およびその関連組織は責任を負いかねますので、
-　予めご了承ください。
+4. Disclaimer
+For events resulting from the use of this software,
+Since the author and its related organizations can not assume the responsibility,
+Please note.
 
-５．ライセンス
-　BSDライセンスです。
-　個人・商用を問わず、ご利用いただけます。
+5. license
+BSD is the license.
+Regardless of the personal and commercial, are available.
 
-６．更新内容
-　・ v201310版 <- v201212版の更新
-　　- IPv6 only環境でも動作するように改良 (special thanks to Hiroyuki Ikegami)
-　　- ieee1888_client と ieee1888_serverでの接続失敗問題を解消 (special thanks to Motomasa Tanaka (motomasa-tanaka@mayekawa.co.jp))
-　　- ソースコードにライセンス文を追加
-　　- ieee1888_server gccビルド時に出た warning: format not a literal ... を解消
+6. Updated content
+ﾂｷ V201310 Edition <- v201212 edition of the update
+- Improvements to work with IPv6 only environment (special thanks to Hiroyuki Ikegami)
+- Eliminate the connection failure problem in ieee1888_client and ieee1888_server (special thanks to Motomasa Tanaka (motomasa-tanaka@mayekawa.co.jp))
+- Add the license statement to the source code
+- Ieee1888_server gcc build-time to came out warning: format not a literal ... are eliminated
 
-７．バグの報告
-　落合秀也 ochiai@vdec.u-tokyo.ac.jp へご連絡ください。
+7. Bug reports
+Please contact me to Ochiai Hideya ochiai@vdec.u-tokyo.ac.jp.
